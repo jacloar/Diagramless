@@ -46,4 +46,27 @@ public class LetterCell implements CellType {
   public void clearClue() {
     this.clue = 0;
   }
+
+  @Override
+  public char getLetter() throws IllegalStateException {
+    if (this.letter == ' ') {
+      throw new IllegalStateException("Cell does not contain a letter");
+    }
+
+    return letter;
+  }
+
+  @Override
+  public int getClue() throws IllegalStateException {
+    if (this.clue == 0) {
+      throw new IllegalStateException("Cell deos not contain a clue number");
+    }
+
+    return clue;
+  }
+
+  @Override
+  public boolean isFilled() {
+    return false;
+  }
 }

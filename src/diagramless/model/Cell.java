@@ -19,10 +19,10 @@ public class Cell {
    * and vis versa.
    */
   public void toggle() {
-    if (type instanceof LetterCell) {
-      type = new FilledCell();
-    } else {
+    if (type.isFilled()) {
       type = new LetterCell();
+    } else {
+      type = new FilledCell();
     }
   }
 
@@ -32,14 +32,14 @@ public class Cell {
    * @param letter The capital letter ('A' - 'Z') to be contained in this cell.
    * @throws IllegalArgumentException if given invalid letter
    */
-  void setLetter(char letter) throws IllegalArgumentException {
+  public void setLetter(char letter) throws IllegalArgumentException {
     type.setLetter(letter);
   }
 
   /**
    * Clears the letter from this cell.
    */
-  void clearLetter() {
+  public void clearLetter() {
     type.clearLetter();
   }
 
@@ -49,14 +49,43 @@ public class Cell {
    * @param clue The positive integer for this cell's clue.
    * @throws IllegalArgumentException if given non-positive integer
    */
-  void setClue(int clue) throws IllegalArgumentException {
+  public void setClue(int clue) throws IllegalArgumentException {
     type.setClue(clue);
   }
 
   /**
    * Clears the clue from this cell.
    */
-  void clearClue() {
+  public void clearClue() {
     type.clearClue();
+  }
+
+  /**
+   * Returns the cell's letter.
+   *
+   * @throws IllegalStateException if invalid type to return letter, ie, {@link FilledCell},
+   * or the cell does not have a proper letter.
+   */
+  public char getLetter() throws IllegalStateException {
+    return type.getLetter();
+  }
+
+  /**
+   * Returns the cell's clue number.
+   *
+   * @throws IllegalStateException if invalid type to return clue number, ie, {@link FilledCell},
+   * or the cell does not have a proper clue number.
+   */
+  public int getClue() throws IllegalStateException {
+    return type.getClue();
+  }
+
+  /**
+   * Determines if the cell is a {@link FilledCell}.
+   *
+   * @return true if a filled cell.
+   */
+  public boolean isFilled() {
+    return type.isFilled();
   }
 }

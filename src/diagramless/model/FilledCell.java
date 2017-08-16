@@ -7,26 +7,37 @@ public class FilledCell implements CellType {
 
 
   @Override
-  public void setLetter(char letter) throws IllegalArgumentException {
-    if (letter < 'A' || letter > 'Z') {
-      throw new IllegalArgumentException("Invalid letter");
-    }
+  public void setLetter(char letter) {
+    throw new IllegalStateException("Cannot set letter of filled cell");
   }
 
   @Override
   public void clearLetter() {
-
+    throw new IllegalStateException("Cannot clear letter of filled cell");
   }
 
   @Override
-  public void setClue(int clue) throws IllegalArgumentException {
-    if (clue <= 0) {
-      throw new IllegalArgumentException("Invalid clue");
-    }
+  public void setClue(int clue) {
+    throw new IllegalStateException("Cannot set clue of filled cell");
   }
 
   @Override
   public void clearClue() {
+    throw new IllegalStateException("Cannot clear clue of filled cell");
+  }
 
+  @Override
+  public char getLetter() throws IllegalStateException {
+    throw new IllegalStateException("Cannot get letter of filled cell");
+  }
+
+  @Override
+  public int getClue() throws IllegalStateException {
+    throw new IllegalStateException("Cannot get clue number of filled cell");
+  }
+
+  @Override
+  public boolean isFilled() {
+    return true;
   }
 }

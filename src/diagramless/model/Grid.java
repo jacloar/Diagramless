@@ -9,10 +9,18 @@ public class Grid {
 
   private ArrayList<ArrayList<Cell>> cells;
 
+  /**
+   * Constructs a default grid of {@link Cell}s with size of 17x17.
+   */
   Grid() {
     this(17);
   }
 
+  /**
+   * Constructs a grid of {@link Cell}s with given grid size. Forms square grid, size x size.
+   *
+   * @param size Side length of grid
+   */
   Grid(int size) {
     cells = new ArrayList<>();
 

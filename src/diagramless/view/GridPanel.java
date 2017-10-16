@@ -14,7 +14,7 @@ import diagramless.model.IBoard;
 public class GridPanel extends JPanel {
 
   private IBoard model;
-  private static int cellSize = 100;
+  private static int cellSize = 40;
 
   @Override
   public void paintComponent(Graphics g) {
@@ -56,13 +56,15 @@ public class GridPanel extends JPanel {
       g.drawRect(x * cellSize, y * cellSize, cellSize, cellSize);
 
       if (c.hasClue()) {
+        g.setFont(new Font("Ariel", Font.PLAIN, 10));
         g.drawString(String.valueOf(c.getClue()),
-                x * cellSize + cellSize / 10, x * cellSize + cellSize / 10);
+                x * cellSize, (int) ((y + 0.2) * cellSize));
       }
 
       if (c.hasLetter()) {
+        g.setFont(new Font("Ariel", Font.PLAIN, cellSize));
         g.drawString(String.valueOf(c.getLetter()),
-                x * cellSize + cellSize / 2, y * cellSize + cellSize / 2);
+                (int) ((x + 0.2) * cellSize), (int) ((y + 0.9) * cellSize));
       }
     }
 

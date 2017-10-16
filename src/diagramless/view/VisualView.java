@@ -1,5 +1,7 @@
 package diagramless.view;
 
+import java.awt.*;
+
 import javax.swing.*;
 
 import diagramless.model.IBoard;
@@ -30,5 +32,17 @@ public class VisualView extends JFrame {
   public void setModel(IBoard model) {
     this.grid = model;
     panel.setModel(model);
+  }
+
+  /**
+   * Initializes the view
+   */
+  public void initialize() {
+    this.setVisible(true);
+  }
+
+  @Override
+  public Dimension getPreferredSize() {
+    return new Dimension(1000, 1000);
   }
 }

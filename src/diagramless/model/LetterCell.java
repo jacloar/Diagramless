@@ -48,8 +48,13 @@ public class LetterCell implements CellType {
   }
 
   @Override
+  public boolean hasLetter() {
+    return this.letter != ' ';
+  }
+
+  @Override
   public char getLetter() throws IllegalStateException {
-    if (this.letter == ' ') {
+    if (!this.hasLetter()) {
       throw new IllegalStateException("Cell does not contain a letter");
     }
 
@@ -57,8 +62,13 @@ public class LetterCell implements CellType {
   }
 
   @Override
+  public boolean hasClue() {
+    return this.clue != 0;
+  }
+
+  @Override
   public int getClue() throws IllegalStateException {
-    if (this.clue == 0) {
+    if (!this.hasClue()) {
       throw new IllegalStateException("Cell deos not contain a clue number");
     }
 

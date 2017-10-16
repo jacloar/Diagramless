@@ -2,7 +2,7 @@ package diagramless.view;
 
 import javax.swing.*;
 
-import diagramless.model.Grid;
+import diagramless.model.IBoard;
 
 /**
  * Represents a visual view using a gui and swing.
@@ -10,7 +10,7 @@ import diagramless.model.Grid;
 public class VisualView extends JFrame {
 
   private final GridPanel panel;
-  private Grid grid;
+  private IBoard grid;
 
   /**
    * Constructs a new visual view.
@@ -23,11 +23,11 @@ public class VisualView extends JFrame {
   }
 
   /**
-   * Sets this views model to the given {@link Grid}.
+   * Sets this views model to the given {@link IBoard}.
    *
    * @param model Model to add to this
    */
-  public void setModel(Grid model) {
+  public void setModel(IBoard model) {
     this.grid = model;
   }
 }

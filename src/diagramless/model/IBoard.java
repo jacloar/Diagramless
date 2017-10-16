@@ -40,14 +40,14 @@ public interface IBoard {
   /**
    * Sets the character of the selected cell
    *
-   * @param letter  Letter to set
+   * @param letter Letter to set
    */
   void setLetter(char letter);
 
   /**
    * Sets the clue of the selected cell
    *
-   * @param clue  Clue to set
+   * @param clue Clue to set
    */
   void setClue(int clue);
 
@@ -64,6 +64,13 @@ public interface IBoard {
    * @return y coordinate
    */
   int getY();
+
+  /**
+   * Accessor method for size of grid
+   *
+   * @return grid size
+   */
+  int getSize();
 
   /**
    * Accessor method for the grid of cells

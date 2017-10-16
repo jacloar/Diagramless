@@ -14,7 +14,7 @@ public class Grid implements IBoard {
   /**
    * Constructs a default grid of {@link Cell}s with size of 17x17.
    */
-  Grid() {
+  public Grid() {
     this(17, 0, 0);
   }
 
@@ -22,8 +22,8 @@ public class Grid implements IBoard {
    * Constructs a grid of {@link Cell}s with given grid size. Forms square grid, size x size.
    *
    * @param size Side length of grid
-   * @param x x coordinate of starting selected cell
-   * @param y y coordinate of starting selected cell
+   * @param x    x coordinate of starting selected cell
+   * @param y    y coordinate of starting selected cell
    */
   Grid(int size, int x, int y) {
     if (x < 0 || x >= size) {
@@ -104,6 +104,11 @@ public class Grid implements IBoard {
   @Override
   public int getY() {
     return curY;
+  }
+
+  @Override
+  public int getSize() {
+    return cells.size();
   }
 
   @Override

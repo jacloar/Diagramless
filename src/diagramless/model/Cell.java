@@ -61,6 +61,15 @@ public class Cell {
   }
 
   /**
+   * Determines if the cell has a letter.
+   *
+   * @return true if the cell has a letter, false otherwise
+   */
+  public boolean hasLetter() {
+    return type.hasLetter();
+  }
+
+  /**
    * Returns the cell's letter.
    *
    * @throws IllegalStateException if invalid type to return letter, ie, {@link FilledCell},
@@ -68,6 +77,15 @@ public class Cell {
    */
   public char getLetter() throws IllegalStateException {
     return type.getLetter();
+  }
+
+  /**
+   * Determines if the cell has a clue.
+   *
+   * @return true if the cell has a clue, false otherwise
+   */
+  public boolean hasClue() {
+    return type.hasClue();
   }
 
   /**

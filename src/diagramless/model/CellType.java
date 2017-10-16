@@ -37,12 +37,26 @@ public interface CellType {
   void clearClue();
 
   /**
+   * Determines if the cell has a letter.
+   *
+   * @return true if has letter
+   */
+  boolean hasLetter();
+
+  /**
    * Returns the cell's letter.
    *
    * @throws IllegalStateException if invalid type to return letter, ie, {@link FilledCell},
    * or the cell does not have a proper letter.
    */
   char getLetter() throws IllegalStateException;
+
+  /**
+   * Determines if the cell has a clue.
+   *
+   * @return true if has clue
+   */
+  boolean hasClue();
 
   /**
    * Returns the cell's clue number.

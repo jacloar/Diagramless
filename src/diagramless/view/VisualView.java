@@ -29,5 +29,6 @@ public class VisualView extends JFrame {
    */
   public void setModel(IBoard model) {
     this.grid = model;
+    panel.setModel(model);
   }
 }

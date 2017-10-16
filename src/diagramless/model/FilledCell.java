@@ -27,8 +27,18 @@ public class FilledCell implements CellType {
   }
 
   @Override
+  public boolean hasLetter() {
+    return false;
+  }
+
+  @Override
   public char getLetter() throws IllegalStateException {
     throw new IllegalStateException("Cannot get letter of filled cell");
+  }
+
+  @Override
+  public boolean hasClue() {
+    return false;
   }
 
   @Override

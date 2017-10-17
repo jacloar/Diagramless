@@ -18,17 +18,6 @@ public class Diagramless {
   public static void main(String[] args) {
 
     IBoard model = new Grid();
-    model.moveRight();
-    model.setClue(10);
-    model.setLetter('A');
-    model.moveDown();
-    model.setLetter('B');
-    model.moveDown();
-    model.toggleCell();
-    model.moveDown();
-    model.moveDown();
-    model.moveRight();
-    model.setClue(31);
 
     VisualView view = new VisualView();
     view.setModel(model);

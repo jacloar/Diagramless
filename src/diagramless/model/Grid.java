@@ -82,18 +82,30 @@ public class Grid implements IBoard {
 
   @Override
   public void clearCell() {
-    cells.get(curX).get(curY).clearLetter();
-    cells.get(curX).get(curY).clearClue();
+    try {
+      cells.get(curX).get(curY).clearLetter();
+      cells.get(curX).get(curY).clearClue();
+    } catch (IllegalStateException e) {
+      //do nothing
+    }
   }
 
   @Override
   public void setLetter(char letter) {
-    cells.get(curX).get(curY).setLetter(letter);
+    try {
+      cells.get(curX).get(curY).setLetter(letter);
+    } catch (IllegalStateException e) {
+      //do nothing
+    }
   }
 
   @Override
   public void setClue(int clue) {
-    cells.get(curX).get(curY).setClue(clue);
+    try {
+      cells.get(curX).get(curY).setClue(clue);
+    } catch (IllegalStateException e) {
+      //do nothing
+    }
   }
 
   @Override

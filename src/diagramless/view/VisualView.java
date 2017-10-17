@@ -42,6 +42,6 @@ public class VisualView extends JFrame implements IView {
 
   @Override
   public Dimension getPreferredSize() {
-    return new Dimension(1000, 1000);
+    return new Dimension(800, 800);
   }
 }

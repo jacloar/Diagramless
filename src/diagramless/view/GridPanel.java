@@ -57,7 +57,7 @@ public class GridPanel extends JPanel {
       if (selected) {
         g.setColor(Color.YELLOW);
       } else {
-        g.setColor(Color.BLACK);
+        g.setColor(Color.WHITE);
       }
 
       g.fillRect(x * cellSize, y * cellSize, cellSize, cellSize);

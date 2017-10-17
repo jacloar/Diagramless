@@ -38,19 +38,28 @@ public class GridPanel extends JPanel {
   }
 
   private void drawCell(Graphics g, Cell c, int x, int y) {
+    boolean selected = false;
     Color backgroud;
 
     if (x == model.getX() && y == model.getY()) {
-      backgroud = Color.YELLOW;
-    } else {
-      backgroud = Color.WHITE;
+      selected = true;
     }
 
     if (c.isFilled()) {
-      g.setColor(Color.BLACK);
+      if (selected) {
+        g.setColor(Color.DARK_GRAY);
+      } else {
+        g.setColor(Color.BLACK);
+      }
+
       g.fillRect(x * cellSize, y * cellSize, cellSize, cellSize);
     } else {
-      g.setColor(backgroud);
+      if (selected) {
+        g.setColor(Color.YELLOW);
+      } else {
+        g.setColor(Color.BLACK);
+      }
+
       g.fillRect(x * cellSize, y * cellSize, cellSize, cellSize);
       g.setColor(Color.BLACK);
       g.drawRect(x * cellSize, y * cellSize, cellSize, cellSize);

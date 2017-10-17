@@ -1,5 +1,7 @@
 package diagramless.view;
 
+import java.awt.event.KeyListener;
+
 import diagramless.model.IBoard;
 
 /**
@@ -17,4 +19,14 @@ public interface IView {
    * Initializes the view
    */
   void initialize();
+
+  /**
+   * Updates the view
+   */
+  void update();
+
+  /**
+   * Adds a key listener to the view
+   */
+  void addKeyListener(KeyListener listener);
 }

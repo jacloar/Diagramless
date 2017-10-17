@@ -1,5 +1,6 @@
 package diagramless;
 
+import diagramless.controller.DiagramlessController;
 import diagramless.model.Grid;
 import diagramless.model.IBoard;
 import diagramless.view.VisualView;
@@ -31,6 +32,8 @@ public class Diagramless {
 
     VisualView view = new VisualView();
     view.setModel(model);
-    view.initialize();
+
+    DiagramlessController controller = new DiagramlessController(model, view);
+    controller.initialize();
   }
 }

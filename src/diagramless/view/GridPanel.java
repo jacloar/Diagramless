@@ -74,4 +74,12 @@ public class GridPanel extends JPanel {
     this.model = model;
   }
 
+  /**
+   * Updates the panel
+   */
+  public void update() {
+    this.repaint();
+    this.revalidate();
+  }
+
 }
